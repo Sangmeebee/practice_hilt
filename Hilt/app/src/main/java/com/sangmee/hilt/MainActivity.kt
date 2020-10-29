@@ -1,6 +1,7 @@
 package com.sangmee.hilt
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.sangmee.hilt.data.local.LocalDataSourceImpl
 import com.sangmee.hilt.data.remote.RemoteDataSourceImpl
@@ -21,7 +22,9 @@ class MainActivity : AppCompatActivity() {
 //    }
 
     //Inject 어노테이션 : 필드에 의존성 주입
-    @Inject lateinit var mainViewModel: MainViewModel
+//    @Inject lateinit var mainViewModel: MainViewModel
+
+    private val mainViewModel by viewModels<MainViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
