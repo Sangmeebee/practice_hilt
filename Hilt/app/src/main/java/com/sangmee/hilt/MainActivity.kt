@@ -21,13 +21,13 @@ class MainActivity : AppCompatActivity() {
 //    }
 
     //Inject 어노테이션 : 필드에 의존성 주입
-    @Inject lateinit var repository: Repository
+    @Inject lateinit var mainViewModel: MainViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 //        tv_output.text = mainViewModel.result
-        tv_output.text = repository.getData()
+        tv_output.text = mainViewModel.result
     }
 }
 
