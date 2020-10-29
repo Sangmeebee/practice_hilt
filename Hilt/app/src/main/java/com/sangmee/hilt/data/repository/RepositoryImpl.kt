@@ -4,13 +4,15 @@ import com.sangmee.hilt.data.local.LocalDataSourceImpl
 import com.sangmee.hilt.data.remote.RemoteDataSourceImpl
 import kotlin.random.Random
 
-class RepositoryImpl : Repository {
-    private val localDataSource = LocalDataSourceImpl()
-    private val remoteDataSource=RemoteDataSourceImpl()
+class RepositoryImpl(
+    private val localDataSource: LocalDataSourceImpl,
+    private val remoteDataSource: RemoteDataSourceImpl
+) : Repository {
+
     override fun getData(): String {
-        return if(Random.nextBoolean()){
+        return if (Random.nextBoolean()) {
             localDataSource.getData()
-        } else{
+        } else {
             remoteDataSource.getData()
         }
     }

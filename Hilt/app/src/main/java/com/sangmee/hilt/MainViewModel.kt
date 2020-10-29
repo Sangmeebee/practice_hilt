@@ -1,9 +1,8 @@
 package com.sangmee.hilt
 
-import com.sangmee.hilt.data.repository.RepositoryImpl
+import com.sangmee.hilt.data.repository.Repository
 
-class MainViewModel {
+class MainViewModel(private val repository: Repository) {
 
-    private val repository = RepositoryImpl()
     val result = repository.getData()
 }
